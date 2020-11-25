@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faComments, faGenderless, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComments, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { animateScroll } from 'react-scroll';
 import AnimateHeight from 'react-animate-height';
 import './style.scss';
 
@@ -116,8 +117,12 @@ export default function Chatbot(props) {
   const [matches, setMatches] = useState([]);
 
   useEffect(()=>{
-    document.querySelector(".Chat-message-container").scrollIntoView({ block: "start", behavior: "smooth" });
-  },[history]);
+    if(nextLoaded){
+      animateScroll.scrollToBottom({
+        containerId: "Chat-message-container"
+      });
+    }
+  },[nextLoaded]);
 
   useEffect(()=>{
     if(isActive === true){
@@ -192,7 +197,7 @@ export default function Chatbot(props) {
               <FontAwesomeIcon icon={faTimes} />
             </div>
           </div>
-          <div className="Chat-message-container">
+          <div className="Chat-message-container" id="Chat-message-container">
               {/* {!isActive &&  */}
             <AnimateHeight
               duration={500}
