@@ -187,7 +187,7 @@ export default function Chatbot(props) {
       >
         <div className="Chat-content">
           <div className="Chat-heading-container">
-            <p className="Chat-heading">Chat with DoDoBot</p>
+            <p className="Chat-heading">🤖Chat With DoDobot🤖</p>
             <div className="Chat-heading-close" onClick={toggleShowing}>
               <FontAwesomeIcon icon={faTimes} />
             </div>
