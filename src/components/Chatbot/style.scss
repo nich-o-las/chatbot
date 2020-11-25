@@ -1,0 +1,229 @@
+@import '../../config.scss';
+
+.Chat{
+  position: fixed;
+  background-color: $bright-secondary;
+  width: 310px;
+  bottom: 70px;
+  right: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  border-radius: 15px;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+}
+
+.Chat-overlay{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+  padding: .25em;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: -15px;
+  width: 100%;
+  height: 105%;
+  border-radius: 15px;
+  border-bottom-right-radius: 0;
+  z-index: 1;
+  background-color: $light;
+}
+
+.Chat-overlay ul{
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.Chat-overlay p{
+  margin-bottom: .5em;
+}
+
+.fade-out {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+
+.overlay-button{
+  border-radius: 15px;
+  font-size: 25px;
+  background-color: #EDED24;
+  // border: 1px solid black;
+  border: none;
+  padding: .5em;
+  margin-top: .25em;
+}
+
+.overlay-button:hover{
+  cursor: pointer;
+}
+
+.Chat-heading{
+  text-align: center;
+  margin: auto;
+  margin-bottom: .25em;
+  width: 60%;
+  color: $light-text;
+  padding: .5em;
+  border-radius: 15px;
+}
+
+.Chat-heading-close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: $light-text;
+}
+
+.Chat-heading-close:hover{
+  cursor: pointer;
+  color: $message-grey;
+}
+
+.Chat-content{
+  height: 450px;
+  border-radius: 15px;
+  border-bottom-right-radius: 0;
+  padding: .5em;
+  padding-bottom: .25em;
+}
+
+.Chat-message-container{
+  height: 90%;
+  overflow-x: auto;
+  background-color: $message-white;
+  border-bottom-left-radius: 15px;
+  padding-bottom: .5em;
+}
+
+.Chat-option-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 50%;
+  margin-left: auto;
+  margin-right: .5em;
+}
+
+.Chat-option{
+  padding: .5em;
+  margin: 2px;
+  background-color: $message-green;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  transition: transform .2s;
+}
+
+.Chat-option:hover{
+  background-color: $message-blue;
+  cursor: pointer;
+  transform: scale(1.1);
+  color: $light-text;
+}
+
+.Chat-question{
+  border-radius: 15px;
+  padding: .5em;
+  max-width: 75%;
+  float: left;
+  background-color: $message-grey;
+  margin: .25em;
+}
+
+.Chat-answer{
+  text-align: right;
+  max-width: 75%;
+  border-radius: 15px;
+  margin: .25em;
+  float: right;
+  background-color: $message-blue;
+  padding: .5em;
+  color: $light-text;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4,end) 900ms infinite;      
+  animation: ellipsis steps(4,end) 900ms infinite;
+  content: "\2026"; 
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 20px;    
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 20px;    
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $message-white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $message-grey;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $message-dark-grey;
+}
+
+.Chat-icon-container{
+  cursor: pointer;
+  background-color: $bright-secondary;
+  color: $light-text;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  bottom: 10px;
+  right: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+};
+
+@media only screen and (max-width: 400px){
+  .Chat-icon-container{
+    right: 2px;
+  }
+  .Chat{
+    right: 2px;
+  }
+}
+
+@media only screen and (min-width: 1000px){
+  .Chat-icon-container{
+    right: 250px;
+  }
+  .Chat{
+    right: 250px;
+  }
+}

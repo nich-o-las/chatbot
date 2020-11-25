@@ -1,0 +1,41 @@
+@import 'config.scss';
+
+.App{
+  min-height: 100vh;
+  padding: 2vh 0;
+  background-image: url(./images/congruent_pentagon.png);
+  color: $dark-text;
+}
+
+.App-logo{
+  text-align: center;
+}
+
+.App-content{
+  min-height: 96vh;
+  max-width:  $container-width;
+  padding: 1em;
+  margin: auto;
+  background-color: $light;
+  box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+}
+
+.App-copy{
+  margin-top: 1em;
+}
+
+.App-content img{
+  width: 48%;
+  margin: 2% 2% 2% 0;
+  float: left;
+  box-shadow: 2px 5px 5px rgba(0,0,0,0.25);
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 550px){
+  .App-content img{
+    width: 96%;
+    margin: 2%;
+    float: none;
+  }
+}
