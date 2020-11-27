@@ -50,14 +50,21 @@
   border-radius: 15px;
   font-size: 25px;
   background-color: #EDED24;
-  // border: 1px solid black;
   border: none;
   padding: .5em;
   margin-top: .25em;
+  transition: transform .2s;
 }
 
 .overlay-button:hover{
   cursor: pointer;
+  border: none;
+  transform: scale(1.1);
+}
+
+.overlay-button:focus{
+  border: none;
+  outline: none;
 }
 
 .Chat-heading{
